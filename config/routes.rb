@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  resources :todos do
+    member do
+      patch :toggle
+    end
+  end
+  
+  root 'todos#index'
 end
