@@ -8,4 +8,34 @@
   <%= turbo_frame_tag "todos" do %>
     <%= render @todos %>
   <% end %>
+
+  <div class="mt-8 border-t pt-6" data-controller="tabs">
+    <div class="border-b border-gray-200">
+      <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+        <button data-tabs-target="tab" 
+                data-action="tabs#switch"
+                class="border-b-2 border-blue-500 py-4 px-1 text-sm font-medium text-blue-600">
+          Watch
+        </button>
+        <button data-tabs-target="tab"
+                data-action="tabs#switch"
+                class="border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700">
+          Later
+        </button>
+      </nav>
+    </div>
+
+    <div class="mt-4">
+    <div data-tabs-target="panel">
+      <p class="text-sm text-gray-500 italic">
+        Follow-ups and reminders
+      </p>
+    </div>
+    <div data-tabs-target="panel" class="hidden">
+      <p class="text-sm text-gray-500 italic">
+        Future possibilities
+      </p>
+    </div>
+  </div>
+  </div>
 </div>
